@@ -1,9 +1,12 @@
 # Welcome
-
 This project is meant to be run with docker. If you don't have docker installed on your machine, well... [https://docs.docker.com/install/](https://docs.docker.com/install/)
 You'll need `make` too. If you're on Windows, [https://docs.microsoft.com/en-gb/windows/wsl/install-win10](https://docs.microsoft.com/en-gb/windows/wsl/install-win10)
 
 There's a file called `.editorconfig` at root. It defines some config that your IDE will use if you install EditorConfig plugin. Please do it, it'll improve consistency over projects and developers.
+## Let's go
+First, let's clone project into a new directory. `git clone git@git.canari.io:canari/symfony-project-skeleton.git [YOUR-PROJECT-NAME]`. Don't forget to add a project name at the end...
+
+Then `cd [YOUR-PROJECT-NAME]` and `rm -rf .git && git init && git remote add origin [YOUR-NEW-GITLAB-REPO-NAME]`
 
 ## First run
 `make init` will create all necessary folder / files, init the database, and make sure everything is ready
@@ -15,7 +18,7 @@ EasyDeployBundle is installed, but is configured to deploy to the demo project. 
 
 You need an ssh access to the server. You'll have to connect manually at least once to accept server's key.
 
-Once script and server ready, you can deploy using `bin/console deploy dev` from your host (yes you'll need a recent PHP version on your host), or have Gitlab CI/CD do it for you (see below).
+Once script and server are ready, you can deploy using `bin/console deploy dev` from your host (yes you'll need a recent PHP version on your host), or have Gitlab CI/CD do it for you (see below).
 
 ### Gitlab
 A `.gitlab-ci.yml` file exists at project's root. Use it to trigger actions. Before being able to use it, you'll have to configure a gitlab-runner 
