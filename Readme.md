@@ -3,6 +3,8 @@
 This project is meant to be run with docker. If you don't have docker installed on your machine, well... [https://docs.docker.com/install/](https://docs.docker.com/install/)
 You'll need `make` too. If you're on Windows, [https://docs.microsoft.com/en-gb/windows/wsl/install-win10](https://docs.microsoft.com/en-gb/windows/wsl/install-win10)
 
+There's a file called `.editorconfig` at root. It defines some config that your IDE will use if you install EditorConfig plugin. Please do it, it'll improve consistency over projects and developers.
+
 ## First run
 `make init` will create all necessary folder / files, init the database, and make sure everything is ready
 
@@ -28,7 +30,6 @@ The Symfony Maker Bundle comes pre-installed. Use it to facilitate your work :) 
 
 ### Todo
 - Add Behat and demo test
-- Add gitlab-ci
 - Automatize server / ci configuration
 - Automatize gitlab project creation
 - Check npm watch / perf on Mac
