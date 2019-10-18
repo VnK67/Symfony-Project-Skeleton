@@ -1,0 +1,19 @@
+stages:
+  - dev
+
+deploy:dev:
+  tags:
+    - machine
+  when: manual
+  stage: dev
+  script:
+    - composer install
+    - bin/console deploy dev
+
+#ssh:dev:
+#  when: manual
+#  tags:
+#    - machine
+#  stage: dev
+#  script:
+#    - ssh -oStrictHostKeyChecking=no [YOUR-PROJECT]@nest.canari.io

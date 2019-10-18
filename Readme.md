@@ -8,6 +8,16 @@ You'll need `make` too. If you're on Windows, [https://docs.microsoft.com/en-gb/
 
 At initialization's end, your project will be available on [http://localhost:8000](http://localhost:8000).
 
+### Deployment
+EasyDeployBundle is installed, but is configured to deploy to the demo project. This is definitely not what you want, so edit file `config/dev/deploy.php` to reflect your project's own configuration. See [bundle's doc](https://github.com/EasyCorp/easy-deploy-bundle) to customize properly. You'll need to create a file for every environment (dev, preprod, prod), use dev one as a model.
+
+You need an ssh access to the server. You'll have to connect manually at least once to accept server's key.
+
+Once script and server ready, you can deploy using `bin/console deploy dev` from your host (yes you'll need a recent PHP version on your host), or have Gitlab CI/CD do it for you (see below).
+
+### Gitlab
+A `.gitlab-ci.yml` file exists at project's root. Use it to trigger actions. Before being able to use it, you'll have to configure a gitlab-runner 
+
 ## Day-to-day use
 `make up` will start the project and make it available on [http://localhost:8000](http://localhost:8000).
 
@@ -15,3 +25,10 @@ Once the project started, an instance of PhpMyAdmin will be available on [http:/
 
 ## Development
 The Symfony Maker Bundle comes pre-installed. Use it to facilitate your work :) [https://symfony.com/doc/current/bundles/SymfonyMakerBundle/index.html](https://symfony.com/doc/current/bundles/SymfonyMakerBundle/index.html)
+
+### Todo
+- Add Behat and demo test
+- Add gitlab-ci
+- Automatize server / ci configuration
+- Automatize gitlab project creation
+- Check npm watch / perf on Mac
