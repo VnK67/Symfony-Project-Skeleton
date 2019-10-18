@@ -19,8 +19,8 @@ chmod -R 777 ./var/cache ./var/logs ./var/indexes ./var/sessions ./var/uploads .
 echo -e '\033[42;30mInstalling fresh data ...\033[0m'
 php ./bin/console doctrine:database:drop --force
 php ./bin/console doctrine:database:create
-php ./bin/console doctrine:schema:update --force
-php ./bin/console doctrine:fixtures:load
+php ./bin/console doctrine:migrations:migrate --allow-no-migration --quiet
+php ./bin/console doctrine:fixtures:load --quiet
 
 echo -e '\033[42;30mClearing cache ...\033[0m'
 rm -rf var/cache/*
